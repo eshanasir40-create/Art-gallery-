@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>About | Artelle Creative Art Gallery</title>
+
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background:linear-gradient(135deg,#f6d365,#fda085,#d4a5e5,#a8edea,#d4fc79);
+    color: #111522;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 85px;
+
+    padding: 0 7%;
+
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #f8f7f4;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.logo small {
+    display: block;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: #111522;
+
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #a87932;
+}
+
+.home-btn {
+    background: #111522;
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 23px;
+
+    cursor: pointer;
+}
+
+.home-btn:hover {
+    background: #a87932;
+}
+
+
+/* =========================
+   ABOUT HERO
+========================= */
+
+.about-hero {
+    padding: 110px 7% 80px;
+
+    text-align: center;
+}
+
+.label {
+    color: #a87932;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+}
+
+.about-hero h1 {
+    font-family: Georgia, serif;
+
+    font-size: 68px;
+
+    font-weight: normal;
+
+    margin-bottom: 22px;
+}
+
+.about-hero p {
+    max-width: 680px;
+
+    margin: auto;
+
+    color: #777;
+
+    line-height: 1.9;
+}
+
+
+/* =========================
+   ABOUT CONTENT
+========================= */
+
+.about-content {
+    padding: 50px 7% 100px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.about-image {
+    height: 550px;
+}
+
+.about-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.about-text h2 {
+    font-family: Georgia, serif;
+
+    font-size: 50px;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: #777;
+
+    line-height: 2;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   MISSION
+========================= */
+
+.mission {
+    background: #eeece7;
+
+    padding: 100px 7%;
+
+    text-align: center;
+}
+
+.mission h2 {
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    margin-bottom: 20px;
+}
+
+.mission p {
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #777;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   VALUES
+========================= */
+
+.values {
+    padding: 100px 7%;
+}
+
+.values-title {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.values-title h2 {
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+}
+
+.values-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.value-card {
+    background: white;
+
+    border: 1px solid #e2e0dc;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+}
+
+.value-icon {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    color: #777;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    background: #111522;
+
+    color: white;
+
+    padding: 70px 7%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    text-align: center;
+
+    gap: 30px;
+}
+
+.stat h2 {
+    font-family: Georgia, serif;
+
+    font-size: 45px;
+
+    font-weight: normal;
+
+    color: #c59a55;
+}
+
+.stat p {
+    color: #aaa;
+
+    margin-top: 8px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CONTACT CTA
+========================= */
+
+.contact {
+    padding: 100px 7%;
+
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: Georgia, serif;
+
+    font-size: 50px;
+
+    font-weight: normal;
+
+    margin-bottom: 20px;
+}
+
+.contact p {
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+.contact-btn {
+    padding: 15px 28px;
+
+    background: #111522;
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background: #a87932;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0b0c10;
+
+    color: white;
+
+    padding: 55px 7% 25px;
+}
+
+.footer-content {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: #999;
+
+    font-size: 13px;
+
+    line-height: 2;
+
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+
+    border-top: 1px solid #333;
+
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .about-hero h1 {
+        font-size: 45px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        ARTELLE
+
+        <small>
+            CREATIVE ART GALLERY
+        </small>
+
+    </a>
+
+
+
+    <button>
+        <a href="file:///C:/Users/Shine%20Tech/New%20folder/art%20gallery/front.html"
+        class="home-btn"
+        onclick="goHome()">
+
+        Home
+</a>
+    </button>
+
+</header>
+
+
+
+<!-- =========================
+     ABOUT HERO
+========================= -->
+
+<section class="about-hero">
+
+    <div class="label">
+        About Artelle
+    </div>
+
+    <h1>
+        Art That Tells a Story.
+    </h1>
+
+    <p>
+        Artelle is a creative digital gallery
+        dedicated to discovering, presenting and
+        celebrating beautiful works of art.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT CONTENT
+========================= -->
+
+<section class="about-content">
+
+
+    <div class="about-image">
+
+        <!-- ⭐ اپنی ABOUT IMAGE یہاں لگائیں -->
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS316-fvVCmSLybCMAS6obSAY62gVOa3pKIoZq10h2kRQ&s=10"
+            alt="Artelle Gallery">
+
+    </div>
+
+
+    <div class="about-text">
+
+        <div class="label">
+            Our Story
+        </div>
+
+        <h2>
+            Where Creativity Meets Imagination
+        </h2>
+
+        <p>
+            Artelle was created with a simple idea:
+            to create a beautiful digital space where
+            art and creativity can be discovered by everyone.
+        </p>
+
+        <p>
+            From traditional paintings to modern and
+            digital artwork, Artelle brings together
+            different styles, ideas and creative voices.
+        </p>
+
+        <p>
+            Every artwork has a story. Our goal is to
+            provide a platform where those stories can
+            be seen, appreciated and remembered.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MISSION
+========================= -->
+
+<section class="mission">
+
+    <div class="label">
+        Our Mission
+    </div>
+
+    <h2>
+        Making Art More Accessible.
+    </h2>
+
+    <p>
+        We believe that art should be inspiring,
+        accessible and enjoyable for everyone.
+        Artelle brings artists, artwork and art
+        lovers together in one creative space.
+    </p>
+
+</section>
+
+
+
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <div class="logo">
+
+                ARTELLE
+
+                <small>
+                    CREATIVE ART GALLERY
+                </small>
+
+            </div>
+
+            <br>
+
+            <p>
+                Where creativity meets imagination.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Explore
+            </h3>
+
+            <p>
+                <a href="index.html">
+                    Home
+                </a>
+            </p>
+
+            <p>
+                <a href="art.html">
+                    Art
+                </a>
+            </p>
+
+            <p>
+                <a href="collections.html">
+                    Collections
+                </a>
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Discover
+            </h3>
+
+            <p>
+                <a href="about.html">
+                    About
+                </a>
+            </p>
+
+            <p>
+                Instagram
+            </p>
+
+            <p>
+                Pinterest
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Artelle Creative Art Gallery
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+
+
+/* =========================
+   ART PAGE
+========================= */
+
+function goToArt() {
+
+    window.location.href = "art.html";
+
+}
+
+</script>
+
+
+</body>
+</html>

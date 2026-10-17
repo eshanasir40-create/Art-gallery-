@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Art | Artelle Creative Art Gallery</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background:linear-gradient(135deg,#f6d365,#fda085,#d4a5e5,#a8edea,#d4fc79);
+            color: #111522;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            height: 85px;
+            padding: 0 7%;
+            border-bottom: 1px solid #ddd;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: #f8f7f4;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .logo small {
+            display: block;
+            text-align: center;
+
+            font-family: Arial, sans-serif;
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #111522;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #a87932;
+        }
+
+        .explore-btn {
+            background: #111522;
+            color: white;
+            border: none;
+
+            padding: 14px 23px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           PAGE HERO
+        ========================= */
+
+        .page-hero {
+            padding: 100px 7% 70px;
+            text-align: center;
+        }
+
+        .page-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #a87932;
+
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 {
+            font-family: Georgia, serif;
+            font-size: 65px;
+            font-weight: normal;
+
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            color: #777;
+            max-width: 600px;
+            margin: auto;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           FEATURED ART
+        ========================= */
+
+        .featured {
+            padding: 40px 7% 100px;
+        }
+
+        .section-heading {
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            font-size: 45px;
+            font-weight: normal;
+        }
+
+        .section-heading p {
+            color: #777;
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           ART GRID
+        ========================= */
+
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .art-card {
+            background: white;
+            border: 1px solid #e2e0dc;
+
+            transition: 0.3s;
+        }
+
+        .art-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .art-image {
+            height: 400px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .art-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .art-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .art-info {
+            padding: 22px;
+        }
+
+        .art-info h3 {
+            font-family: Georgia, serif;
+            font-size: 23px;
+
+            margin-bottom: 8px;
+        }
+
+        .art-info p {
+            color: #888;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CATEGORY
+        ========================= */
+
+        .category {
+            padding: 90px 7%;
+            background: #eeece7;
+        }
+
+        .category-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .category-buttons button {
+            padding: 11px 22px;
+
+            border: 1px solid #aaa;
+            background: transparent;
+
+            cursor: pointer;
+        }
+
+        .category-buttons button:hover,
+        .category-buttons .active {
+            background: #111522;
+            color: white;
+        }
+
+
+        /* =========================
+           BIG ART
+        ========================= */
+
+        .big-art {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            min-height: 500px;
+            background: white;
+        }
+
+        .big-art-image {
+            min-height: 500px;
+        }
+
+        .big-art-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .big-art-content {
+            padding: 70px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .big-art-content h2 {
+            font-family: Georgia, serif;
+            font-size: 50px;
+            font-weight: normal;
+
+            margin-bottom: 20px;
+        }
+
+        .big-art-content p {
+            color: #777;
+            line-height: 1.9;
+
+            margin-bottom: 25px;
+        }
+
+        .view-btn {
+            width: fit-content;
+
+            padding: 14px 25px;
+
+            background: #111522;
+            color: white;
+
+            border: none;
+            cursor: pointer;
+        }
+
+        .view-btn:hover {
+            background: #a87932;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111522;
+            color: white;
+
+            padding: 50px 7% 25px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer p,
+        footer a {
+            color: #999;
+            font-size: 13px;
+            line-height: 2;
+            text-decoration: none;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+
+            margin-top: 40px;
+            padding-top: 20px;
+
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           IMAGE MODAL
+        ========================= */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0,0,0,.93);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            z-index: 9999;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 85%;
+            max-height: 85vh;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+
+            background: none;
+            border: none;
+
+            color: white;
+            font-size: 45px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .page-hero h1 {
+                font-size: 45px;
+            }
+
+            .art-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .big-art {
+                grid-template-columns: 1fr;
+            }
+
+            .big-art-content {
+                padding: 40px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        ARTELLE
+
+        <small>
+            CREATIVE ART GALLERY
+        </small>
+
+    </a>
+
+
+
+    <button>
+        <a href="file:///C:/Users/Shine%20Tech/New%20folder/art%20gallery/front.html"
+        class="home-btn"
+        onclick="goHome()">
+
+        Home
+</a>
+    </button>
+
+</header>
+
+
+
+
+
+<!-- =========================
+     PAGE HERO
+========================= -->
+
+<section class="page-hero">
+
+    <div class="page-label">
+        Art Collection
+    </div>
+
+    <h1>
+        Explore Beautiful Art.
+    </h1>
+
+    <p>
+        Discover carefully selected artworks from
+        talented artists around the world.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURED ART
+========================= -->
+
+<section class="featured" id="featured">
+
+    <div class="section-heading">
+
+        <div class="page-label">
+            Featured Art
+        </div>
+
+        <h2>
+            Fine Art Collection
+        </h2>
+
+        <p>
+            A collection of unique and inspiring artworks.
+        </p>
+
+    </div>
+
+
+    <div class="art-grid">
+
+
+        <!-- ART 1 -->
+
+        <div class="art-card">
+
+            <div
+                class="art-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZwYsnrQvF0Aa_ZGwgooJjXnLkYJnCLHWjfIDpFJW3qg&s=10')">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZwYsnrQvF0Aa_ZGwgooJjXnLkYJnCLHWjfIDpFJW3qg&s=10"
+                    alt="Golden Dreams">
+
+            </div>
+
+            <div class="art-info">
+
+                <h3>
+                    Golden Dreams
+                </h3>
+
+                <p>
+                    Abstract Art · Emma Rose
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ART 2 -->
+
+        <div class="art-card">
+
+            <div
+                class="art-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0K0MJmOCw8pNsIeKJlL9wC460TZiTJzfjotBngUPBTA&s=10')">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0K0MJmOCw8pNsIeKJlL9wC460TZiTJzfjotBngUPBTA&s=10"
+                    alt="Silent Beauty">
+
+            </div>
+
+            <div class="art-info">
+
+                <h3>
+                    Silent Beauty
+                </h3>
+
+                <p>
+                    Modern Art · Sophia Blake
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ART 3 -->
+
+        <div class="art-card">
+
+            <div
+                class="art-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPhP2IJCMRYcdZ86w79Bq3sLA50bVYearfP4IhdPdvwg&s')">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPhP2IJCMRYcdZ86w79Bq3sLA50bVYearfP4IhdPdvwg&s"
+                    alt="Color Within">
+
+            </div>
+
+            <div class="art-info">
+
+                <h3>
+                    Color Within
+                </h3>
+
+                <p>
+                    Digital Art · Liam Carter
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ART 4 -->
+
+        <div class="art-card">
+
+            <div
+                class="art-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHnaRa98P78NelhUdT9a-UbvpIx169kqqt07swbxajRQ&s=10')">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHnaRa98P78NelhUdT9a-UbvpIx169kqqt07swbxajRQ&s=10"
+                    alt="Inner World">
+
+            </div>
+
+            <div class="art-info">
+
+                <h3>
+                    Inner World
+                </h3>
+
+                <p>
+                    Contemporary Art · Noah Bennett
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ART 5 -->
+
+        <div class="art-card">
+
+            <div
+                class="art-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVwpqt5WvNpMWUVw3nYYTo5K7YwmxMBMymnV_xqlOTVQ&s=10')">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVwpqt5WvNpMWUVw3nYYTo5K7YwmxMBMymnV_xqlOTVQ&s=10"
+                    alt="New Perspective">
+
+            </div>
+
+            <div class="art-info">
+
+                <h3>
+                    New Perspective
+                </h3>
+
+                <p>
+                    Modern Art · Olivia Smith
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ART 6 -->
+
+        <div class="art-card">
+
+            <div
+                class="art-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ24z2pCLj3HRKPtzXjGtHsvGlUN8LJK-Lu3GONZC56CA&s=10')">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ24z2pCLj3HRKPtzXjGtHsvGlUN8LJK-Lu3GONZC56CA&s=10"
+                    alt="Future Vision">
+
+            </div>
+
+            <div class="art-info">
+
+                <h3>
+                    Future Vision
+                </h3>
+
+                <p>
+                    Digital Art · Daniel Lee
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- =========================
+     FEATURED COLLECTION
+========================= -->
+
+<section>
+
+    <div class="big-art">
+
+        <div class="big-art-image">
+
+            <!--
+                ⭐ یہاں اپنی بڑی تصویر لگائیں
+            -->
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlBguRUwBFeRM6VTbfSaSCL9hANk9tKpofthtBFPKRRA&s"
+                alt="Featured Collection">
+
+        </div>
+
+
+        <div class="big-art-content">
+
+            <div class="page-label">
+                Featured Collection
+            </div>
+
+            <h2>
+                The Art of Emotion
+            </h2>
+
+            <p>
+                Art is more than an image.
+                It is a feeling, a story and a
+                unique expression of imagination.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer id="about">
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <div class="logo">
+                ARTELLE
+
+                <small>
+                    CREATIVE ART GALLERY
+                </small>
+
+            </div>
+
+            <br>
+
+            <p>
+                Where creativity meets imagination.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Explore
+            </h3>
+
+            <p>
+                <a href="index.html">
+                    Home
+                </a>
+            </p>
+
+            <p>
+                <a href="art.html">
+                    Art
+                </a>
+            </p>
+
+            <p>
+                <a href="#featured">
+                    Featured
+                </a>
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Follow
+            </h3>
+
+            <p>
+                Instagram
+            </p>
+
+            <p>
+                Pinterest
+            </p>
+
+            <p>
+                Facebook
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Artelle Creative Art Gallery
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     IMAGE MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="imageModal">
+
+    <button
+        class="close"
+        onclick="closeImage()">
+
+        ×
+
+    </button>
+
+    <img
+        id="modalImage"
+        src=""
+        alt="Artwork">
+
+</div>
+
+
+
+<script>
+
+
+
+/* =========================
+   IMAGE MODAL
+========================= */
+
+function openImage(image) {
+
+    document.getElementById("modalImage").src = image;
+
+    document
+        .getElementById("imageModal")
+        .classList.add("show");
+
+}
+
+
+function closeImage() {
+
+    document
+        .getElementById("imageModal")
+        .classList.remove("show");
+
+}
+
+
+/* =========================
+   CLOSE MODAL
+========================= */
+
+document
+    .getElementById("imageModal")
+    .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+
+            closeImage();
+
+        }
+
+    });
+
+
+/* =========================
+   SCROLL TO FEATURED
+========================= */
+
+function scrollToFeatured() {
+
+    document
+        .getElementById("featured")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =========================
+   CATEGORY BUTTON
+========================= */
+
+function showCategory(category, button) {
+
+    document
+        .querySelectorAll(".category-buttons button")
+        .forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+        });
+
+    button.classList.add("active");
+
+    alert(
+        "You selected: " +
+        category
+    );
+
+}
+
+</script>
+
+</body>
+</html>

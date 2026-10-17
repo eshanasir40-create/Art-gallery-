@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Artists | Artelle Creative Art Gallery</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#f6d365,#fda085,#d4a5e5,#a8edea,#d4fc79);
+    color: #111522;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 85px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #ddd;
+    background: #f8f7f4;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #111522;
+    text-decoration: none;
+}
+
+.logo small {
+    display: block;
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111522;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #a87932;
+}
+
+.home-btn {
+    padding: 14px 23px;
+
+    background: #111522;
+    color: white;
+
+    border: none;
+    cursor: pointer;
+}
+
+.home-btn:hover {
+    background: #a87932;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 100px 7% 80px;
+}
+
+.label {
+    color: #a87932;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 68px;
+    font-weight: normal;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #777;
+    line-height: 1.9;
+}
+
+
+/* =========================
+   ARTISTS SECTION
+========================= */
+
+.artists {
+    padding: 40px 7% 100px;
+}
+
+.section-title {
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    font-weight: normal;
+}
+
+.section-title p {
+    color: #777;
+    margin-top: 10px;
+}
+
+
+/* =========================
+   ARTIST GRID
+========================= */
+
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.artist-card {
+    background: white;
+    border: 1px solid #e2e0dc;
+
+    transition: 0.3s;
+}
+
+.artist-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* Artist Image */
+
+.artist-image {
+    height: 390px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.artist-card:hover .artist-image img {
+    transform: scale(1.05);
+}
+
+
+/* Artist Information */
+
+.artist-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.artist-info h3 {
+    font-family: Georgia, serif;
+    font-size: 26px;
+
+    margin-bottom: 8px;
+}
+
+.artist-info .speciality {
+    color: #a87932;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.artist-info p {
+    color: #777;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* Artist Button */
+
+.artist-btn {
+    margin-top: 18px;
+
+    padding: 11px 22px;
+
+    background: #111522;
+    color: white;
+
+    border: none;
+    cursor: pointer;
+}
+
+.artist-btn:hover {
+    background: #a87932;
+}
+
+
+/* =========================
+   FEATURED ARTIST
+========================= */
+
+.featured-artist {
+    background: #eeece7;
+
+    padding: 100px 7%;
+}
+
+.featured-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: white;
+}
+
+.featured-image {
+    height: 550px;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.featured-content {
+    padding: 65px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-content h2 {
+    font-family: Georgia, serif;
+
+    font-size: 52px;
+    font-weight: normal;
+
+    margin-bottom: 20px;
+}
+
+.featured-content p {
+    color: #777;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+.explore-btn {
+    width: fit-content;
+
+    padding: 14px 25px;
+
+    background: #111522;
+    color: white;
+
+    border: none;
+    cursor: pointer;
+}
+
+.explore-btn:hover {
+    background: #a87932;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.93);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal img {
+    max-width: 85%;
+    max-height: 85vh;
+
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+
+    right: 30px;
+    top: 20px;
+
+    color: white;
+    background: none;
+    border: none;
+
+    font-size: 45px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111522;
+    color: white;
+
+    padding: 55px 7% 25px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: #999;
+
+    font-size: 13px;
+    line-height: 2;
+
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+
+    border-top: 1px solid #333;
+
+    margin-top: 40px;
+    padding-top: 20px;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .artist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-box {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-content {
+        padding: 40px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        ARTELLE
+
+        <small>
+            CREATIVE ART GALLERY
+        </small>
+
+    </a>
+
+
+
+    <button>
+    <a href="file:///C:/Users/Shine%20Tech/New%20folder/art%20gallery/front.html"
+        class="home-btn"
+        onclick="goHome()">
+
+        Home
+     </a>
+    </button>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="label">
+        Meet The Artists
+    </div>
+
+    <h1>
+        Creative Minds.
+    </h1>
+
+    <p>
+        Discover talented artists whose imagination,
+        passion and creativity bring every artwork to life.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     ARTISTS
+========================= -->
+
+<section class="artists">
+
+    <div class="section-title">
+
+        <div class="label">
+            Our Artists
+        </div>
+
+        <h2>
+            Featured Artists
+        </h2>
+
+        <p>
+            Explore the creative minds behind our collection.
+        </p>
+
+    </div>
+
+
+    <div class="artist-grid">
+
+
+        <!-- =====================
+             ARTIST 1
+        ====================== -->
+
+        <div class="artist-card">
+
+            <div
+                class="artist-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROMJAap6e67cgiQaUkhr8mrStW9KdEuXwm3WqkdJKzFA&s=10')">
+
+                <!-- ⭐ یہاں Artist 1 کی picture لگائیں -->
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROMJAap6e67cgiQaUkhr8mrStW9KdEuXwm3WqkdJKzFA&s=10"
+                    alt="Emma Rose">
+
+            </div>
+
+
+            <div class="artist-info">
+
+                <h3>
+                    Emma Rose
+                </h3>
+
+                <div class="speciality">
+                    Abstract Artist
+                </div>
+
+                <p>
+                    Emma creates expressive abstract
+                    artworks inspired by emotions,
+                    nature and color.
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================
+             ARTIST 2
+        ====================== -->
+
+        <div class="artist-card">
+
+            <div
+                class="artist-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUgHFmMTUhdwyjo0OTYRj35yOYQxNNB_ZDwdhUh4flMA&s=10')">
+
+                <!-- ⭐ یہاں Artist 2 کی picture لگائیں -->
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUgHFmMTUhdwyjo0OTYRj35yOYQxNNB_ZDwdhUh4flMA&s=10"
+                    alt="Sophia Blake">
+
+            </div>
+
+
+            <div class="artist-info">
+
+                <h3>
+                    Sophia Blake
+                </h3>
+
+                <div class="speciality">
+                    Modern Artist
+                </div>
+
+                <p>
+                    Sophia combines modern techniques
+                    with traditional artistic ideas.
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================
+             ARTIST 3
+        ====================== -->
+
+        <div class="artist-card">
+
+            <div
+                class="artist-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyFbM5GDffWrjNNxKbRaA7Jgq7-CBYymrenZtw-lM5vw&s=10')">
+
+                <!-- ⭐ یہاں Artist 3 کی picture لگائیں -->
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyFbM5GDffWrjNNxKbRaA7Jgq7-CBYymrenZtw-lM5vw&s=10"
+                    alt="Liam Carter">
+
+            </div>
+
+
+            <div class="artist-info">
+
+                <h3>
+                    Liam Carter
+                </h3>
+
+                <div class="speciality">
+                    Digital Artist
+                </div>
+
+                <p>
+                    Liam explores digital art through
+                    futuristic concepts and imagination.
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================
+             ARTIST 4
+        ====================== -->
+
+        <div class="artist-card">
+
+            <div
+                class="artist-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB2kp4Og_6wSlvvvMl4OXM3aZiQeY-rsDaxw1A9lcukg&s=10')">
+
+                <!-- ⭐ یہاں Artist 4 کی picture لگائیں -->
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB2kp4Og_6wSlvvvMl4OXM3aZiQeY-rsDaxw1A9lcukg&s=10"
+                    alt="Olivia Smith">
+
+            </div>
+
+
+            <div class="artist-info">
+
+                <h3>
+                    Olivia Smith
+                </h3>
+
+                <div class="speciality">
+                    Contemporary Artist
+                </div>
+
+                <p>
+                    Olivia creates contemporary pieces
+                    inspired by everyday life.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================
+             ARTIST 5
+        ====================== -->
+
+        <div class="artist-card">
+
+            <div
+                class="artist-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-xssft87jlbuUFT1G0XPpr4sHyQiIHydz18GzgwFEJw&s')">
+
+                <!-- ⭐ یہاں Artist 5 کی picture لگائیں -->
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-xssft87jlbuUFT1G0XPpr4sHyQiIHydz18GzgwFEJw&s"
+                    alt="Daniel Lee">
+
+            </div>
+
+
+            <div class="artist-info">
+
+                <h3>
+                    Daniel Lee
+                </h3>
+
+                <div class="speciality">
+                    Fine Artist
+                </div>
+
+                <p>
+                    Daniel focuses on detailed fine art
+                    inspired by people and landscapes.
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================
+             ARTIST 6
+        ====================== -->
+
+        <div class="artist-card">
+
+            <div
+                class="artist-image"
+                onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1E7rYHWXiWZwhInPPfem4IvYIs5I2DrXQBzmO5za6Dg&s=10')">
+
+                <!-- ⭐ یہاں Artist 6 کی picture لگائیں -->
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1E7rYHWXiWZwhInPPfem4IvYIs5I2DrXQBzmO5za6Dg&s=10"
+                    alt="Noah Bennett">
+
+            </div>
+
+
+            <div class="artist-info">
+
+                <h3>
+                    Noah Bennett
+                </h3>
+
+                <div class="speciality">
+                    Visual Artist
+                </div>
+
+                <p>
+                    Noah creates visual stories through
+                    creative compositions and unique ideas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="imageModal">
+
+    <button
+        class="close"
+        onclick="closeImage()">
+
+        ×
+
+    </button>
+
+    <img
+        id="modalImage"
+        src=""
+        alt="Artist">
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <div class="logo">
+
+                ARTELLE
+
+                <small>
+                    CREATIVE ART GALLERY
+                </small>
+
+            </div>
+
+            <br>
+
+            <p>
+                Where creativity meets imagination.
+            </p>
+
+        </div>
+
+
+
+    <div class="copyright">
+
+        © 2026 Artelle Creative Art Gallery
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* =========================
+   HOME
+========================= */
+
+function goHome() {
+
+    window.location.href = "index.html";
+
+}
+
+
+/* =========================
+   ART PAGE
+========================= */
+
+function goToArt() {
+
+    window.location.href = "art.html";
+
+}
+
+
+
+
+/* =========================
+   IMAGE MODAL
+========================= */
+
+function openImage(image) {
+
+    document
+        .getElementById("modalImage")
+        .src = image;
+
+    document
+        .getElementById("imageModal")
+        .classList.add("show");
+
+}
+
+
+function closeImage() {
+
+    document
+        .getElementById("imageModal")
+        .classList.remove("show");
+
+}
+
+
+/* Close modal by clicking outside image */
+
+document
+    .getElementById("imageModal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+
+            closeImage();
+
+        }
+
+    });
+
+
+/* Close modal with ESC key */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeImage();
+
+    }
+
+});
+
+</script>
+
+
+</body>
+</html>
